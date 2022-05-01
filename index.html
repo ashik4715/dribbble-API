@@ -24,6 +24,8 @@
       .hover-content {
         position: absolute;
         margin-top: 115px;
+        font-weight: 700;
+        color: white;
         display:none;
       }
 
@@ -48,7 +50,7 @@
       }
 
       .card-img-top:hover + .hover-content {
-        color: turquoise;
+        color: white;
         display: block;
       }
     </style>
@@ -81,7 +83,7 @@ $.ajax({
           // if ((val.title.indexOf("Trendy Fasion Logo") > -1) && !(val.title.indexOf("eCompareFX Logo") > -1)) {
             $('#shots').prepend(
             // '<a class="shot" target="_blank" href="'+ val.html_url +'" title="' + val.title + '"><div class="title">' + val.title + '</div><img src="'+ val.images.hidpi +'"/></a>',
-            '<div class="col-sm-4 py-4"> <div class="card shot align-items-center" style="width: 23rem;"><img src="'+val.images.hidpi+'" class="card-img-top" alt="val.images"><div class="hover-content mx-auto text-center">'+val.title+'</div><div class="card-body"><h5 class="card-title">'+val.title+'</h5><p class="card-text">'+val.title+'</p><a href="'+ val.html_url +'" target="_blank" class="">'+val.title+'</a></div></div> </div>'
+            '<div class="col-sm-4 py-4"> <div class="card shot align-items-center" style="width: 23rem;"><img src="'+val.images.hidpi+'" class="card-img-top" alt="val.images"><div class="hover-content mx-auto text-center"><a href="'+ val.html_url +'" target="_blank" style="text-decoration: none; color:white;">'+val.title+'</a></div> </div> </div>'
             )
           // }
           
