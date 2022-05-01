@@ -25,6 +25,8 @@
         position: absolute;
         margin-top: 115px;
         font-weight: 700;
+        font-family:'Roboto', arial, sans-serif;
+        overflow: hidden;
         color: white;
         display:none;
       }
@@ -36,22 +38,24 @@
       .card-img-top {
         max-width: 390px;
         max-height:292.5px;
-        -webkit-transition: .5s ease-in-out;
-        transition: .5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        -moz-transition: all 0.5s ease-in-out 0s;
+        transition: all 0.5s ease-in-out 0s;
       }
 
       .card-img-top:hover {
-        /* opacity: 0.4; */
-        -webkit-transition: .5s ease-in-out;
-        transition: .5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        -moz-transition: all 0.5s ease-in-out 0s;
+        transition: all 0.5s ease-in-out 0s;
+        filter: brightness(30%);
         /* -webkit-transition: opacity 1s;
         transition: opacity 1s; */
-        filter: brightness(30%);
       }
 
       .card-img-top:hover + .hover-content {
         color: white;
-        display: block;
+        display: block;    
+        pointer-events: none;
       }
     </style>
 
@@ -83,7 +87,7 @@ $.ajax({
           // if ((val.title.indexOf("Trendy Fasion Logo") > -1) && !(val.title.indexOf("eCompareFX Logo") > -1)) {
             $('#shots').prepend(
             // '<a class="shot" target="_blank" href="'+ val.html_url +'" title="' + val.title + '"><div class="title">' + val.title + '</div><img src="'+ val.images.hidpi +'"/></a>',
-            '<div class="col-sm-4 py-4"> <div class="card shot align-items-center" style="width: 23rem;"><img src="'+val.images.hidpi+'" class="card-img-top" alt="val.images"><div class="hover-content mx-auto text-center"><a href="'+ val.html_url +'" target="_blank" style="text-decoration: none; color:white;">'+val.title+'</a></div> </div> </div>'
+            '<div class="col-sm-4 py-4"> <div class="card shot align-items-center" style="width: 23rem;"><img src="'+val.images.hidpi+'" class="card-img-top" alt="val.images"><div class="hover-content mx-auto text-center"> '+val.title+' </div> <a href="'+ val.html_url +'" target="_blank" style="text-decoration: none; color:blue;"> '+val.title+' </a> </div> </div>'
             )
           // }
           
